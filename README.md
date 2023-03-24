@@ -12,9 +12,19 @@ login page.
 
 
 
+
+
+
+
+
 ![4](https://user-images.githubusercontent.com/76527448/227513955-c3d72453-de62-42f5-a8ce-b3e5932c65de.PNG)
 
 client registering a policy.
+
+
+
+
+
 
 
 
@@ -24,9 +34,19 @@ client registering an occurrence for an already registered policy.
 
 
 
+
+
+
+
+
 ![5](https://user-images.githubusercontent.com/76527448/227515773-4cd5e46a-f860-414a-a074-1642978aa26f.PNG)
 
 insurance expert seeing the details of the occurrence, then they can choose to accept or reject it.
+
+
+
+
+
 
 
 
@@ -36,9 +56,17 @@ if the occurrence was accepted, the client can choose the repairmen he associate
 
 
 
+
+
+
+
+
 ![7](https://user-images.githubusercontent.com/76527448/227515832-2198c8f0-21a0-4da7-8d4d-6d36e5b646e3.PNG)
 
 the repairman marks an occurrence as repaired.
+
+
+
 
 
 
