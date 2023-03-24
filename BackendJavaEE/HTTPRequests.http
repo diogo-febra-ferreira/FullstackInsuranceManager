@@ -1,0 +1,184 @@
+##### Students
+GET http://localhost:8080/academics/api/clients
+Accept: application/json
+###
+POST http://localhost:8080/academics/api/clients
+Content-Type: application/json
+
+{
+ "email": "johndoe@mail.com",
+ "name": "John Doe",
+ "username": "jonydoe",
+ "password": "jd",
+ "courseCode": 10
+}
+
+###
+GET http://localhost:8080/academics/api/clients/edgargomes
+Accept: application/json
+
+###
+GET http://localhost:8080/academics/api/clients/edgargomes/occurrences
+Accept: application/json
+
+###
+GET http://localhost:8080/academics/api/occurrences
+Accept: application/json
+
+###
+GET http://localhost:8080/academics/api/occurrences/edgargomes/unrolledSubjects
+Accept: application/json
+
+###
+POST http://localhost:8080/academics/api/clients/enroll
+Content-Type: application/json
+
+[
+{
+  "courseCode": 1,
+  "courseName": "Engenharia Informática",
+  "email": "abc123@gmail.com",
+  "name": "Edgar Bagagem",
+  "password": "123456",
+  "username": "edgargomes"
+},
+  {
+    "code": 2,
+    "courseCode": 1,
+    "courseName": "Engenharia Informática",
+    "courseYear": 1,
+    "name": "Programação 2",
+    "schoolYear": 2022
+  }
+]
+
+###
+GET http://localhost:8080/academics/api/clients/occurrence/1/
+Accept: application/json
+
+###
+DELETE http://localhost:8080/academics/api/courses/1
+
+###
+POST http://localhost:8080/academics/api/clients/edgargomes/email/send
+Content-Type: application/json
+
+{
+  "occurrence": "Welcome to EI!",
+  "message": "Hi! Congratulations, you are now enrolled in EI!"
+}
+
+### REQUEST JWT TOKEN
+POST http://localhost:8080/academics/api/auth/login
+Content-Type: application/json
+Accept: application/json
+
+{
+"username": "repair1",
+"password": "arquitect"
+}
+
+### GET ALL STUDENTS
+GET http://localhost:8080/academics/api/clients
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlZGdhcmdvbWVzIiwiaWF0IjoxNjY5ODEzOTczLCJleHAiOjE2Njk4MTc1NzN9.c-mfYk-ExAlnrMGHrAFLqKK-D8538asKCi1xIl3UTvk
+// Bearer <token>
+
+
+###
+POST http://localhost:8080/academics/api/documents HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxOTIzOTI4NTQiLCJpYXQiOjE2NzM0NTE0MzUsImV4cCI6MTY3MzQ1NTAzNX0.qkRk5ZH0k5mF2wuS3TPx79XWfn8CVF5TIjQpWNWQhHM
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="teste.txt"
+
+<eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlZGdhcmdvbWVzIiwiaWF0IjoxNjY5ODEzOTczLCJleHAiOjE2Njk4MTc1NzN9.c-mfYk-ExAlnrMGHrAFLqKK-D8538asKCi1xIl3UTvk
+--boundary
+
+###
+GET http://localhost:8080/academics/api/documents/download/1 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlZGdhcmdvbWVzIiwiaWF0IjoxNjY5ODEzOTczLCJleHAiOjE2Njk4MTc1NzN9.c-mfYk-ExAlnrMGHrAFLqKK-D8538asKCi1xIl3UTvk
+Content-Type: application/x-www-form-urlencoded
+
+###
+GET http://localhost:8080/academics/api/occurrences
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxOTIzOTI4NTQiLCJpYXQiOjE2NzM2MTgyNTIsImV4cCI6MTY3MzYyMTg1Mn0.B2IGL4lfAKxLLE33WWxK3waYkEJHy1o9pDK_9PBOFtc
+Accept: application/json
+
+###
+GET http://localhost:8080/academics/api/repairmen/1234
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjM0IiwiaWF0IjoxNjczNDc1NjE4LCJleHAiOjE2NzM0NzkyMTh9.phHYjmbZTgjtjVbx6JjheLXrn0QXJp1uU7hpu1ebS9A
+Accept: application/json
+
+###
+GET http://localhost:8080/academics/api/repairmen/1234/occurrences
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjM0IiwiaWF0IjoxNjczNjM0NzE3LCJleHAiOjE2NzM2MzgzMTd9.lA5BjHwhPbKuFuaVciomTfaZo_rDG8O-btPlQ9yKrTw
+Accept: application/json
+
+###
+POST http://localhost:8080/academics/api/repairmen
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjMiLCJpYXQiOjE2NzM2MjA2NzAsImV4cCI6MTY3MzYyNDI3MH0.xYDtpaQvRTBeZJRbCGm4F-mhj0W0HHTqFQKGurBTTX0
+Content-Type: application/json
+
+{
+  "username": "Lord",
+  "password": "123",
+  "name": "Lord Hasbulah",
+  "email": "blahblah@mail.com"
+}
+
+###
+POST http://localhost:8080/academics/api/repairmen/repair1/4/associate
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyZXBhaXIxIiwiaWF0IjoxNjczNzMwMDMzLCJleHAiOjE2NzM3MzM2MzN9.svcn6bjE2tAj_ReLq3WujNf6auBwNoBTJG6CF-eIrmM
+Content-Type: application/json
+
+{
+  "username": "repair1",
+  "code": "4"
+}
+
+###
+GET http://localhost:8080/academics/api/repairmen/1234/occurrences
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjM0IiwiaWF0IjoxNjczNjM5NzY0LCJleHAiOjE2NzM2NDMzNjR9.wK7ACAzTg8CRZUEutp35NgEoiXYIivvHtLqUw2aJR8M
+Accept: application/json
+
+
+###
+POST http://localhost:8080/academics/api/repairmen/4/email/send
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjM0IiwiaWF0IjoxNjczNTM4MDc1LCJleHAiOjE2NzM1NDE2NzV9.Ns13AEFBFeoUKkQwpO6fPjAKMI4ykd73lIcC-G3ljb0
+Content-Type: application/json
+
+{
+  "message": "Partir alguma coisa",
+  "occurrence": "12345"
+}
+
+###
+POST http://localhost:8080/academics/api/occurrences/create
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxOTIzOTI4NTQiLCJpYXQiOjE2NzM0ODYyNjIsImV4cCI6MTY3MzQ4OTg2Mn0.TA4So6_FXoBjgwc2uyqzjpA3VK_Btf0SMqpGmmg80_c
+Content-Type: application/json
+
+{
+  "description": "coisa",
+  "insurance": "seg1",
+  "client": "192392854"
+}
+
+###
+GET http://localhost:8080/academics/api/occurrences/192392854
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxOTIzOTI4NTQiLCJpYXQiOjE2NzM1MzU4MzYsImV4cCI6MTY3MzUzOTQzNn0.dpzvPpFpoFN1tV4J09GrxvWk7hRVXude7RA9Rr36cCU
+Accept: application/json
+
+
+###
+POST http://localhost:8080/academics/api/clients/192392854/email/send
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyNDUzMTMxOTIiLCJpYXQiOjE2NzM3MDgyODIsImV4cCI6MTY3MzcxMTg4Mn0.Xe8g4Qk3Rhil463AAz_02BiEOMjox4nsga_HK0dH-b0
+Content-Type: application/json
+
+{
+  "occurrence": "2",
+  "message": "Occurrence number 2"
+}
+
+
